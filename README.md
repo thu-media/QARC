@@ -19,7 +19,7 @@ In 'videodatasets/', we describe how to generate video datasets.
 6. Type 'process-vmaf.py' to generate h5py file for training.
 
 ## QARC-basic
-The traditional QARC method is composed of two modules: VQPN and VQRL.
+The traditional QARC method is composed of two modules: VQPN and VQRL.
 
 ### VQPN(Video Quality Prediction Network)
 To run and evaluate VQPN, you should follow these steps.
