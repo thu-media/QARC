@@ -35,7 +35,7 @@ class Environment:
 
     def send_video_queue(self, video_quality, timeslot):
         # another fast algorithm with random walk - poisson process
-        video_quality *= 1024 * 1024
+        video_quality *= 1024 * 1024 / 8.
         _packet_count = int(video_quality / MTU_PACKET_SIZE)
         _last_packet_len = video_quality % MTU_PACKET_SIZE
         if _last_packet_len > 0:
