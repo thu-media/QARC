@@ -39,4 +39,4 @@ To run and test VQRL, one should follow these steps:
    
 3. Run the training process via 'python main.py'
 
-The useage of advanced-QARC is quite same as QARC.
+The usage of advanced-QARC is quite the same as QARC.
