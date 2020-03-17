@@ -22,15 +22,17 @@ In `videodatasets/`, we describe how to generate video datasets.
     git clone https://github.com/Netflix/vmaf
     ```
     and checkout version 1.3.9 (available on the `v1.3.9` tag).
-2. Copy the `videodatasets` folder to the `vmaf` folder.
-3. Download several video clips into `videodatasets/mov` folders, and the video MUST be encoded in h.264 format.
+2. Copy the `videodatasets/` folder to the `vmaf/` folder.
+3. Download several video clips into `videodatasets/mov/` folders, and the video MUST be encoded in h.264 format.
 4. Run `trans.py` for transcoding `mp4` video format to `flv`.
 5. Run `main.py` for generating video datasets including logs and video frames.
-    > Note: To avoid any potential errors, make sure to install ffmpeg, find your path to `ffmpeg` by running `which ffmpeg` in the command line, and set `FFMPEG_PATH` in `vmaf/python/src/vmaf/externals.py`, e.g. add a line like  
-    > `FFMPEG_PATH="[path to exec]/ffmpeg"`
+    > Note: To avoid any potential errors, make sure to install ffmpeg, find your path to `ffmpeg` by running `which ffmpeg` in the command line, and set `FFMPEG_PATH` in `vmaf/python/src/vmaf/externals.py`, e.g. add a line like
+    ```
+    FFMPEG_PATH="[path to exec]/ffmpeg"
+    ````
 
 6. Run `process-vmaf.py` to generate a h5py file for training.
-   > Note: This script expects frame image files from the previous step to be in a subdirectory named `img/<original_video_filename>/`. E.g., if the original file was `1.mp4`, then it expects frame image files to be under `img/1.mp4/`.
+   > Note: This script expects frame image files from the previous step to be in a subdirectory named `img/<original_video_filename>/`, e.g., if the original file was `1.mp4`, then its frame image files would be under `img/1.mp4/`.
 
 ## QARC-basic
 The traditional QARC method is composed of two modules: VQPN and VQRL.
@@ -54,3 +56,17 @@ To run and test VQRL, one should follow these steps:
 3. Run the training process via `python main.py`
 
 The usage of advanced-QARC is quite the same as QARC.
+
+## Cite
+
+If you find this work useful to you, please cite
+
+```
+@inproceedings{huang2018qarc,
+  title={Qarc: Video quality aware rate control for real-time video streaming based on deep reinforcement learning},
+  author={Huang, Tianchi and Zhang, Rui-Xiao and Zhou, Chao and Sun, Lifeng},
+  booktitle={Proceedings of the 26th ACM international conference on Multimedia},
+  pages={1208--1216},
+  year={2018}
+}
+```
